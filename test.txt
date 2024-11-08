@@ -1,2 +1,42 @@
-aaaaa
-bbbbb
+
+<git 초기 1회성 진행>
+- cmd -> git config --global user.email "shkim2@konai.com" -> git config --global user.name "shkim2"
+
+<git add & commit>
+- vs -> terminal -> powershell -> 대상 디렉토리 이동
+- git add 파일명 or git add 파일명1 파일명2 or it add . ->  git commit -m "메세지(수정내용)"
+
+<git 용어>
+- git status : 상태창(staging(add)한 파일들 확인)
+- git log --all --oneline : commit 내역확인
+
+<commit시 차이점 확인>
+- terminal로 확인하는 방법
+    - git diff : 보기 불편함
+- terminal vim으로 확인하는 방법
+    - git difftool : vim editor tool로 비교됨
+    - git difftool commit ID : 지정한 commit ID와 비교
+    - git difftool commit ID1 commit ID2 : commit ID1 commit ID2간 비교
+        - git log --all --oneline으로 commit ID(내역) 확인
+- vscode로 확인하는 방법
+    - git config --global diff.tool vscode
+    - git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
+- vscode GUI로 확인하는 방법
+    - vscode extension -> Git Graph 설치 -> vscode Source control -> View Git Graph로도 확인 가능
+
+<git branch : commit의 복사본 개념>
+- branch 기능 이용하면 복사본 만들기가 쉬움
+- git branch test : test라는 branch에 복사본에 내용 추가
+- git status : 상태확인, 내용 첫줄에 현재 위치 나옴 (on branch test)
+
+<git switch>
+- git이동 : main ↔ branch 간 이동
+- git status로 현재 상태 확인 -> (branch인경우) git switch main
+- git stash : 변경사항을 임시 저장
+
+<merge>
+- branch를 만들어 최종 완료되면 master로 merge
+- msater로 이동 : git switch master -> git merge "branch명"
+- branch를 만들고 branch와 master 모두 변동사항이 있어 conflict가 발생했을때 직접 수정해야함
+    - conflict되는 내용이 뜨며 해당되는 내용을 제외 삭제 후 저장 -> git add . -> git commit -m "merge됨(conflict수정)"
+- git log --oneline --all --graph
