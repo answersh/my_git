@@ -1,6 +1,6 @@
 
 <git 초기 1회성 진행>
-- cmd -> git config --global user.email "shkim2@konai.com" -> git config --global user.name "shkim2"
+- git bash -> git config --global user.email "shkim2@konai.com" -> git config --global user.name "shkim2"
 
 <git add & commit>
 - vs -> terminal -> powershell -> 대상 디렉토리 이동
@@ -40,3 +40,34 @@
 - branch를 만들고 branch와 master 모두 변동사항이 있어 conflict가 발생했을때 직접 수정해야함
     - conflict되는 내용이 뜨며 해당되는 내용을 제외 삭제 후 저장 -> git add . -> git commit -m "merge됨(conflict수정)"
 - git log --oneline --all --graph
+
+
+########################################################################################################################
+
+<참고 링크 : https://devyihyun.tistory.com/27>
+
+- Working Directory --(git add)--> Staging Area --(git commit)--> Local Repository --(git push)--> Remote Repository
+    - Working Directory : 작업할 파일이 있는 디렉토리
+    - Staging Area : commit(저장의 개념)을 수행할 파일들이 올라가는 영역
+    - Git Directory : git에 저장된 디렉토리
+    - Remote Repository : Github계정에 있는 폴더로 commit면 Repository만 반영, push하면 github에 반영
+
+- Git code 다운로드 : Remote Repository --(git fetch)--> Local Repository 
+    - git fetch : Github에 있는 code/Repository를 다운 받음
+
+[Github에 코드 올리기]
+- git init
+    - 로컬 저장소 생성 : 내 PC 에 폴더 생성 (D:\git_shkim2)
+    - git bash -> cd D:\git_shkim2 -> git init
+- 로그인 : github id, email
+    - git config --global user.name "answersh"
+    - git config --global user.email answersh@naver.com
+
+- git add
+    - 
+
+
+
+
+
+
