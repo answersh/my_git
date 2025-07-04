@@ -50,23 +50,33 @@
     - Working Directory : 작업할 파일이 있는 디렉토리
     - Staging Area : commit(저장의 개념)을 수행할 파일들이 올라가는 영역
     - Git Directory : git에 저장된 디렉토리
-    - Remote Repository : Github계정에 있는 폴더로 commit면 Repository만 반영, push하면 github에 반영
+    - Local Repository : 로컬PC에 저장되는 저장소
+    - Remote Repository : Github계정에 있는 폴더(원격저장소)로 commit면 Repository만 반영, push하면 github에 반영
+        - New repository : 새로운 저장소 생성
+        - Import repository : 저장소 가져오기
+        - New codespace : 클라우드에 호스팅되는 개발환경
+        - New gist : 코드조각 올리고 싶을때 사용
+        - New Project : notion 같은거
 
 - Git code 다운로드 : Remote Repository --(git fetch)--> Local Repository 
     - git fetch : Github에 있는 code/Repository를 다운 받음
 
-[Github에 코드 올리기]
+[Github에 코드 올리기 : push]
 - git init
     - 로컬 저장소 생성 : 내 PC 에 폴더 생성 (D:\git_shkim2)
     - git bash -> cd D:\git_shkim2 -> git init
 - 로그인 : github id, email
     - git config --global user.name "answersh"
     - git config --global user.email answersh@naver.com
+- git add, commit
+    - git add git사용법정리.txt
+    - git commit -m "내용추가"
+- github에 접속
+    - git remote add origin https://github.com/answersh/my_git.git
+    - git push orgin master
 
-- git add
-    - 
-
-
+[Github에 코드 내려받기 : clone, pull]
+- clone : Remote Repository에 있는 페이지를 모두 다운 
 
 
 
