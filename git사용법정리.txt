@@ -73,7 +73,7 @@
     - git commit -m "내용추가"
 - github에 접속
     - git remote add origin https://github.com/answersh/my_git.git
-    - git push orgin master
+    - git push origin master
 
 [Github에 코드 내려받기 : clone, pull]
 - clone : Remote Repository에 있는 페이지를 모두 다운 
