@@ -1,0 +1,83 @@
+
+<git 초기 1회성 진행>
+- git bash -> git config --global user.email "shkim2@konai.com" -> git config --global user.name "shkim2"
+
+<git add & commit>
+- vs -> terminal -> powershell -> 대상 디렉토리 이동
+- git add 파일명 or git add 파일명1 파일명2 or it add . ->  git commit -m "메세지(수정내용)"
+
+<git 용어>
+- git status : 상태창(staging(add)한 파일들 확인)
+- git log --all --oneline : commit 내역확인
+
+<commit시 차이점 확인>
+- terminal로 확인하는 방법
+    - git diff : 보기 불편함
+- terminal vim으로 확인하는 방법
+    - git difftool : vim editor tool로 비교됨
+    - git difftool commit ID : 지정한 commit ID와 비교
+    - git difftool commit ID1 commit ID2 : commit ID1 commit ID2간 비교
+        - git log --all --oneline으로 commit ID(내역) 확인
+- vscode로 확인하는 방법
+    - git config --global diff.tool vscode
+    - git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
+- vscode GUI로 확인하는 방법
+    - vscode extension -> Git Graph 설치 -> vscode Source control -> View Git Graph로도 확인 가능
+
+<git branch : commit의 복사본 개념>
+- branch 기능 이용하면 복사본 만들기가 쉬움
+- git branch test : test라는 branch에 복사본에 내용 추가
+- git status : 상태확인, 내용 첫줄에 현재 위치 나옴 (on branch test)
+
+<git switch>
+- git이동 : main ↔ branch 간 이동
+- git status로 현재 상태 확인 -> (branch인경우) git switch main
+- git stash : 변경사항을 임시 저장
+
+<merge>
+- branch를 만들어 최종 완료되면 master로 merge
+- msater로 이동 : git switch master -> git merge "branch명"
+- branch를 만들고 branch와 master 모두 변동사항이 있어 conflict가 발생했을때 직접 수정해야함
+    - conflict되는 내용이 뜨며 해당되는 내용을 제외 삭제 후 저장 -> git add . -> git commit -m "merge됨(conflict수정)"
+- git log --oneline --all --graph
+
+
+########################################################################################################################
+
+<참고 링크 : https://devyihyun.tistory.com/27>
+
+- Working Directory --(git add)--> Staging Area --(git commit)--> Local Repository --(git push)--> Remote Repository
+    - Working Directory : 작업할 파일이 있는 디렉토리
+    - Staging Area : commit(저장의 개념)을 수행할 파일들이 올라가는 영역
+    - Git Directory : git에 저장된 디렉토리
+    - Local Repository : 로컬PC에 저장되는 저장소
+    - Remote Repository : Github계정에 있는 폴더(원격저장소)로 commit면 Repository만 반영, push하면 github에 반영
+        - New repository : 새로운 저장소 생성
+        - Import repository : 저장소 가져오기
+        - New codespace : 클라우드에 호스팅되는 개발환경
+        - New gist : 코드조각 올리고 싶을때 사용
+        - New Project : notion 같은거
+
+- Git code 다운로드 : Remote Repository --(git fetch)--> Local Repository 
+    - git fetch : Github에 있는 code/Repository를 다운 받음
+
+[Github에 코드 올리기 : push]
+- git init
+    - 로컬 저장소 생성 : 내 PC 에 폴더 생성 (D:\git_shkim2)
+    - git bash -> cd D:\git_shkim2 -> git init
+- 로그인 : github id, email
+    - git config --global user.name "answersh"
+    - git config --global user.email answersh@naver.com
+- git add, commit
+    - git add git사용법정리.txt
+    - git commit -m "내용추가"
+- github에 접속
+    - git remote add origin https://github.com/answersh/my_git.git
+    - git push orgin master
+
+[Github에 코드 내려받기 : clone, pull]
+- clone : Remote Repository에 있는 페이지를 모두 다운 
+
+
+
+

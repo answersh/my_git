@@ -36,7 +36,6 @@
 - pull : 원격저장소의 변경사항을 받아오기 (ex: B가 A1, A2페이지를 다운받아 코드작성을 하는동안 A가 A3페이지를 만들고 B가 A3만 가져올때 pull을 사용)
     - pull받을 디렉토리로 이동 : cd git_shkim2/pull → git init → git remote add URL.git (ex: https://github.com/answersh/my_git.git) 
 
-
 [Branch]
 - 여러사람이 동일한 소스코드를 기반으로 동시에 다양한 작업을 할 수 있게 만들어 주는 기능
 - 각각의 브랜치는 다른 브랜치에 영향을 받지 않기 때문에 여러작업을 동시에 진행가능
