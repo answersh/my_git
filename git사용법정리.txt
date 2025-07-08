@@ -1,49 +1,3 @@
-
-<git 초기 1회성 진행>
-- git bash -> git config --global user.email "shkim2@konai.com" -> git config --global user.name "shkim2"
-
-<git add & commit>
-- vs -> terminal -> powershell -> 대상 디렉토리 이동
-- git add 파일명 or git add 파일명1 파일명2 or it add . ->  git commit -m "메세지(수정내용)"
-
-<git 용어>
-- git status : 상태창(staging(add)한 파일들 확인)
-- git log --all --oneline : commit 내역확인
-
-<commit시 차이점 확인>
-- terminal로 확인하는 방법
-    - git diff : 보기 불편함
-- terminal vim으로 확인하는 방법
-    - git difftool : vim editor tool로 비교됨
-    - git difftool commit ID : 지정한 commit ID와 비교
-    - git difftool commit ID1 commit ID2 : commit ID1 commit ID2간 비교
-        - git log --all --oneline으로 commit ID(내역) 확인
-- vscode로 확인하는 방법
-    - git config --global diff.tool vscode
-    - git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
-- vscode GUI로 확인하는 방법
-    - vscode extension -> Git Graph 설치 -> vscode Source control -> View Git Graph로도 확인 가능
-
-<git branch : commit의 복사본 개념>
-- branch 기능 이용하면 복사본 만들기가 쉬움
-- git branch test : test라는 branch에 복사본에 내용 추가
-- git status : 상태확인, 내용 첫줄에 현재 위치 나옴 (on branch test)
-
-<git switch>
-- git이동 : main ↔ branch 간 이동
-- git status로 현재 상태 확인 -> (branch인경우) git switch main
-- git stash : 변경사항을 임시 저장
-
-<merge>
-- branch를 만들어 최종 완료되면 master로 merge
-- msater로 이동 : git switch master -> git merge "branch명"
-- branch를 만들고 branch와 master 모두 변동사항이 있어 conflict가 발생했을때 직접 수정해야함
-    - conflict되는 내용이 뜨며 해당되는 내용을 제외 삭제 후 저장 -> git add . -> git commit -m "merge됨(conflict수정)"
-- git log --oneline --all --graph
-
-
-########################################################################################################################
-
 <참고 링크 : https://devyihyun.tistory.com/27>
 
 - Working Directory --(git add)--> Staging Area --(git commit)--> Local Repository --(git push)--> Remote Repository
@@ -77,7 +31,22 @@
 
 [Github에 코드 내려받기 : clone, pull]
 - clone : Remote Repository에 있는 페이지를 모두 다운 
+    - clone할 디렉토리로 이동 : cd git_shkim2\clone
+    - git clone URL . (ex: https://github.com/answersh/my_git.git .)
+- pull : 원격저장소의 변경사항을 받아오기 (ex: B가 A1, A2페이지를 다운받아 코드작성을 하는동안 A가 A3페이지를 만들고 B가 A3만 가져올때 pull을 사용)
+    - pull받을 디렉토리로 이동 : cd git_shkim2/pull → git init → git remote add URL.git (ex: https://github.com/answersh/my_git.git) 
 
 
-
-
+[Branch]
+- 여러사람이 동일한 소스코드를 기반으로 동시에 다양한 작업을 할 수 있게 만들어 주는 기능
+- 각각의 브랜치는 다른 브랜치에 영향을 받지 않기 때문에 여러작업을 동시에 진행가능
+- 각각 만들어진 브랜치는 merge하여 새로운 하나의 브랜티로 모을 수 있음
+- 브랜치 
+    - A1, A2, A3페이지가 있고 A는 A3를 통해 A3-1, B는 A3를 통해 A3-2를 만듬
+    - 이때 A3-1과 A3-2는 A3를 부모커밋으로 두고 있음
+    - Head : 내가 지금 작업 중인 Local Branch, 일반적으로 master의 선두부분(A1)을 나타내나 Head를 이동하면 Branch가 변경됨 
+    - Master Branch : A3-1, A3-2와 같이 Branch가 시작되는 부분
+- git branch 브랜치명(devA) : devA라는 브렌치명생성
+- git branch : Branch정보 보이고 master에 "*"표시됨 
+- git checkout 브랜치명 : Branch명 지정 (Head는 devA로 이동)
+- git branch : Branch정보 보이고 devA에 "*"표시됨 (Branch 이동됨)
