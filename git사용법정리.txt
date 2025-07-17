@@ -28,6 +28,10 @@
 - github에 접속
     - git remote add origin https://github.com/answersh/my_git.git
     - git push origin master
+- 연결제거
+    - remote내역 확인 : git remote -v
+    - remote연결 제거 : git remote remove
+    
 
 [Github에 코드 내려받기 : clone, pull]
 - clone : Remote Repository에 있는 페이지를 모두 다운 
