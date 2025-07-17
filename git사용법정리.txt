@@ -49,3 +49,13 @@
 - git branch : Branch정보 보이고 master에 "*"표시됨 
 - git checkout 브랜치명 : Branch명 지정 (Head는 devA로 이동)
 - git branch : Branch정보 보이고 devA에 "*"표시됨 (Branch 이동됨)
+
+[streamlit]
+- github repository에 .py 업로드
+- requirement.txt 파일 생성 후 install할 package 리스트업 (ex: streamlit plotly 등)
+- Deploy
+    - streamlit community cloud 접속 : https://streamlit.io/cloud
+    - Join Community Cloud 클릭
+    - 우측상단 Create app
+    - Deploy a public app from GitHub선택
+    - Repository, Main file path, App URL설정 → Deploy
